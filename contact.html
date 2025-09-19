@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!-- The 'lang' attribute helps search engines and screen readers understand the page's language. -->
+<html lang="en">
+<head>
+    <!-- Basic page metadata -->
+    <meta charset="UTF-8">
+    <!-- Ensures the page looks good on all devices (responsive design) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- The title that appears in the browser tab -->
+    <title>SkillOrbit.AI</title>
+
+    <!-- This script includes Tailwind CSS, a utility-first CSS framework, for quick styling. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS styles for the page -->
+    <style>
+        /* Import the 'Inter' font from Google Fonts for a clean, modern look */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        /* === General Body Styling === */
+        body {
+            font-family: 'Inter', sans-serif; /* Sets the default font for the whole page */
+            background-color: #0d0124; /* A deep, dark purple background color */
+            color: white; /* Default text color */
+            display: flex; /* Using flexbox to easily center content */
+            justify-content: center; /* Horizontally centers the content */
+            align-items: center; /* Vertically centers the content */
+            min-height: 100vh; /* Makes the body take up at least the full height of the viewport */
+            text-align: center; /* Centers all text within the body */
+        }
+
+        /* === Main Content Container === */
+        /* This container holds all the page content and has a "glassmorphism" effect. */
+        .container {
+            width: 90%; /* Uses 90% of the available width */
+            max-width: 1200px; /* But won't get wider than 1200px on large screens */
+            padding: 2rem; /* Adds some space inside the container */
+            /* A subtle gradient from semi-transparent white to fully transparent */
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+            border-radius: 20px; /* Nicely rounded corners */
+            border: 1px solid rgba(255, 255, 255, 0.1); /* A faint border to give it definition */
+            backdrop-filter: blur(10px); /* The blur effect that creates the "frosted glass" look */
+        }
+
+        /* === Header & Title Styling === */
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem; /* Space below the header */
+        }
+
+        /* The main title of the page */
+        .title {
+            font-size: 3rem; /* Large font size for impact */
+            font-weight: bold;
+            /* A beautiful gradient text effect */
+            background: linear-gradient(90deg, #8b5cf6, #d946ef);
+            -webkit-background-clip: text; /* Clips the background to the text shape */
+            -webkit-text-fill-color: transparent; /* Makes the text color transparent to show the background */
+            margin-bottom: 1rem; /* Space below the title */
+        }
+
+        /* The subtitle below the main title */
+        .subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem; /* More space below the subtitle */
+        }
+
+        /* === Features Section Styling === */
+        /* This is the container for the feature cards */
+        .features {
+            display: flex; /* Arranges the feature cards in a row */
+            flex-wrap: wrap; /* Allows cards to wrap to the next line on smaller screens */
+            gap: 1.5rem; /* The space between the feature cards */
+            justify-content: center; /* Centers the cards horizontally */
+            margin-bottom: 3rem; /* Space below the features section */
+        }
+
+        /* Individual feature card styling */
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+            padding: 1.5rem; /* Space inside the card */
+            border-radius: 12px; /* Rounded corners */
+            border: 1px solid rgba(255, 255, 255, 0.2); /* Slightly more visible border */
+            width: 100%; /* Takes full width on small screens */
+            max-width: 300px; /* Limits the width on larger screens */
+            text-align: left; /* Aligns text to the left inside the card */
+            transition: transform 0.3s ease; /* Smooth animation for the hover effect */
+        }
+
+        /* A subtle "lift" effect when you hover over a feature card */
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Styling for the SVG icons inside the feature cards */
+        .feature-card svg {
+            width: 2rem;
+            height: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Title inside the feature card */
+        .feature-title {
+            font-size: 1.125rem;
+            font-weight: 600; /* Semi-bold */
+            margin-bottom: 0.5rem;
+        }
+
+        /* Description text inside the feature card */
+        .feature-description {
+            font-size: 0.875rem;
+            color: #ccc; /* A lighter gray for less emphasis */
+        }
+
+        /* === Call to Action Button Styling === */
+        .start-button {
+            background: linear-gradient(90deg, #8b5cf6, #d946ef); /* Eye-catching gradient background */
+            color: white;
+            font-weight: bold;
+            padding: 1rem 3rem; /* Generous padding to make it easy to click */
+            border-radius: 9999px; /* Creates a "pill" shape */
+            border: none; /* Removes the default browser border */
+            font-size: 1.125rem;
+            cursor: pointer; /* Changes the cursor to a pointer on hover */
+            /* A subtle shadow that matches the button's gradient */
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+            /* Smooth transitions for hover effects */
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        /* Makes the button lift and its shadow more pronounced on hover */
+        .start-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.6);
+        }
+
+        /* === Footer Text Styling === */
+        .footer-text {
+            font-size: 0.875rem;
+            color: #aaa; /* A subtle gray color */
+            margin-top: 2rem; /* Space above the footer text */
+        }
+
+        /* === Responsive Design === */
+        /* This media query applies styles only when the screen width is 768px or less (like on tablets and phones) */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2.5rem; /* Makes the title slightly smaller on small screens */
+            }
+            .subtitle {
+                font-size: 1rem; /* Makes the subtitle smaller too */
+            }
+        }
+    </style>
+</head>
+<!-- The classes here are from Tailwind CSS, setting a fallback background and text color -->
+<body class="bg-gray-900 text-white">
+
+    <!-- This is the main container that holds all the visible content. -->
+    <div class="container">
+
+        <!-- Header Section -->
+        <div class="header">
+            <h1 class="title">SKILLORBIT.AI</h1>
+        </div>
+
+        <!-- Subtitle and Tagline -->
+        <p class="subtitle">Revolutionize your learning journey with AI-powered personalized education.</p>
+        <p class="text-xl font-semibold mb-8">Upload. Analyze. Master.</p>
+
+        <!-- Features Section -->
+        <div class="features">
+
+            <!-- Feature Card 1: AI Analysis -->
+            <div class="feature-card">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" role="img" aria-label="AI Analysis Icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0h6m-6 0l-3 3m3-3l-3 3" />
+                </svg>
+                <h3 class="feature-title">AI Analysis</h3>
+                <p class="feature-description">Upload PDFs and get instant AI-powered learning insights</p>
+            </div>
+
+            <!-- Feature Card 2: Adaptive Learning -->
+            <div class="feature-card">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" role="img" aria-label="Adaptive Learning Icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                <h3 class="feature-title">Adaptive Learning</h3>
+                <p class="feature-description">Personalized games and quizzes based on your level</p>
+            </div>
+
+            <!-- Feature Card 3: Progress Tracking -->
+            <div class="feature-card">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" role="img" aria-label="Progress Tracking Icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 10l-2 2m0 0l-2-2m2 2V3m2 7h-4M20 18v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2m8-14v-2m-6 6h12a2 2 0 012 2v4a2 2 0 01-2 2H6a2 2 0 01-2-2v-4a2 2 0 012-2z" />
+                </svg>
+                <h3 class="feature-title">Progress Tracking</h3>
+                <p class="feature-description">Monitor your growth with detailed analytics</p>
+            </div>
+        </div>
+
+        <!-- Call to Action Button -->
+        <a href="main.html"><button class="start-button">
+            ✨ Start Learning
+        </button>
+         </a>
+        <!-- Footer Text -->
+        <p class="footer-text">Join thousands of learners already mastering their skills</p>
+    </div>
+</body>
+</html>
